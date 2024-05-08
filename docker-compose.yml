@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  financial-db:
+    image: postgres:11
+    container_name: plataforma-db
+    restart: always
+    environment:
+     - POSTGRES_DB=plataforma-db
+     - POSTGRES_USER=admin
+     - POSTGRES_PASSWORD=123456
+    ports:
+     - 5432:5432
