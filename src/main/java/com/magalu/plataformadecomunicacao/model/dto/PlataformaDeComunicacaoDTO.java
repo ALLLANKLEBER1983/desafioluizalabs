@@ -11,8 +11,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 public class PlataformaDeComunicacaoDTO {
-    private String mensagem;
+    private Mensagem mensagem;
     private String nome;
     private Long cpf;
-    private long telefone;
+    private Long telefone;
 }

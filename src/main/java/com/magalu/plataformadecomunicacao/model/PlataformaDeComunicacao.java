@@ -22,7 +22,7 @@ public class PlataformaDeComunicacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    private String mensagem;
+    private Mensagem mensagem;
     @NotNull
     private String nome;
     @Min(11)

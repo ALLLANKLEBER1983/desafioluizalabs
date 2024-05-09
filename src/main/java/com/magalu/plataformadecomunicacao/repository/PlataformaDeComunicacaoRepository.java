@@ -11,5 +11,5 @@ import java.util.List;
 @Repository
 public interface PlataformaDeComunicacaoRepository extends JpaRepository<PlataformaDeComunicacao,Long> {
 
-    List<PlataformaDeComunicacao> findByMensagem(String mensagem);
+    List<PlataformaDeComunicacao> findByMensagem(Mensagem mensagem);
 }

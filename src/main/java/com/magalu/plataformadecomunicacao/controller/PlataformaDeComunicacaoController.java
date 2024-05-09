@@ -23,7 +23,7 @@ public class PlataformaDeComunicacaoController {
 
     @GetMapping("/status/{mensagem}")
     @ApiOperation(value = "Faz uma busca de destinatário pelo status.")
-    public List<PlataformaDeComunicacao> procurarPorStatus(@PathVariable String mensagem){
+    public List<PlataformaDeComunicacao> procurarPorStatus(@PathVariable Mensagem mensagem){
         return service.consultaPorStatus(mensagem);
     }
     @PostMapping("/inserir")

@@ -9,7 +9,7 @@ import java.util.List;
 public interface PlataformaDeComunicacaoService {
 
     PlataformaDeComunicacaoDTO enviarMensagem(PlataformaDeComunicacaoDTO plataforma);
-    List<PlataformaDeComunicacao> consultaPorStatus(String mensagem);
+    List<PlataformaDeComunicacao> consultaPorStatus(Mensagem mensagem);
     void delete(Long id);
     PlataformaDeComunicacao converToDto(PlataformaDeComunicacaoDTO dto);
 }

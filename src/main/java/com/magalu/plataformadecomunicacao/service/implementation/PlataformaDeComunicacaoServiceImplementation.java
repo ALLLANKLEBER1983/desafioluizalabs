@@ -30,7 +30,7 @@ public class PlataformaDeComunicacaoServiceImplementation implements PlataformaD
         return plataforma;
     }
     @Override
-    public List<PlataformaDeComunicacao> consultaPorStatus(String mensagem){
+    public List<PlataformaDeComunicacao> consultaPorStatus(Mensagem mensagem){
         return repository.findByMensagem(mensagem);
 
     }
@@ -40,7 +40,7 @@ public class PlataformaDeComunicacaoServiceImplementation implements PlataformaD
         validateInformedId(id);
         repository.deleteById(id);
     }
-    private void validateInformedId(Long id){
+    public void validateInformedId(Long id){
         if(isEmpty(id)){
             throw new PlataformaDeComunicacaoException("Não existe esse destinatário.");
         }
