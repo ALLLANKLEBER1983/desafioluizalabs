@@ -1,35 +1,39 @@
 package com.magalu.plataformadecomunicacao.model;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Getter
 @Setter
+@Builder
 public class PlataformaDeComunicacao {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    private Mensagem mensagem;
+    private String mensagem;
     @NotNull
-    private Destinatario destinatario;
+    private String nome;
+    @Min(11)
     @NotNull
+    private Long cpf;
+    @Min(10)
+    @NotNull
+    private Long telefone;
     private Date dataHora;
 
-    public void setDataHora(Data dataHora) {
-        this.dataHora = new Date();
+    public Date setDataHora(Data dataHora) {
+        return this.dataHora = new Date();
     }
 }
